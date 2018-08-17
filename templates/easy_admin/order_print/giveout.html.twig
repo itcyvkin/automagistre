@@ -1,7 +1,7 @@
-{%   include '/easy_admin/order_print/head.html.twig' %}
+{% include 'easy_admin/order_print/layout.html.twig' %}
 
-<h4>согласованные работа и запчасти по автомобилю</h4>
-<h1>а000аа77</h1>
+<h4>согласованные работы и запчасти по автомобилю</h4>
+<h1>{{ car is defined ? car.gosnomer }}</h1>
 <div class="container">
     {#блок работ для выдачи мастеру#}
     <section class="works">
@@ -14,19 +14,27 @@
             </tr>
             </thead>
             <tbody>
+            {% for item in order.rootItems %}
                 <tr>
                     <td class="check"></td>
-                    <td>замена масла двигателя</td>
+                    <td>{{  }}</td>
                     <td>Халиков{#Именно фамилия#}</td>
                 </tr>
-                <tr>
-                    <td class="check"></td>
-                    <td>замена масла двигателя</td>
-                    <td>Халиков{#Именно фамилия#}</td>
+            {% endfor %}
+            <tr>
+                <td class="check"></td>
+                <td>замена масла двигателя</td>
+                <td>Халиков{#Именно фамилия#}</td>
+            </tr>
+            <tr>
+                <td class="check"></td>
+                <td>замена масла двигателя</td>
+                <td>Халиков{#Именно фамилия#}</td>
             </tr>
             </tbody>
         </table>
     </section>
+
     {#блок запчастей для набора зч со склада#}
     <section class="parts" style="margin-top: 2cm">
         <table class="table table-bordered table-striped table-sm">
